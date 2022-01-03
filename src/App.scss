@@ -1,0 +1,15 @@
+div {
+  // display:none;
+}
+
+.grid-productos {
+  .itemProducto {
+    div {
+      border: 1px transparent solid;
+      &:hover {
+        cursor: pointer;
+        border: 1px black solid;
+      }
+    }
+  }
+}
