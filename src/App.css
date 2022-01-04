@@ -1,3 +1,11 @@
+.App {
+  padding-bottom: 40px;
+}
+
+#breadcrumb {
+  background: darkgrey;
+}
+
 .grid-productos .itemProducto div {
   border: 1px transparent solid;
 }
