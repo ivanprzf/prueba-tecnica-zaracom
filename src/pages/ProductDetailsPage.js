@@ -40,7 +40,7 @@ export default function ProductDetailsPage(props) {
       <Header productName={producto.brand + ' ' + producto.model}/>
       <div className="detalles-producto container">
         <div className="row">
-          <div className="col-md-6"><Image imgUrl={producto.imgUrl}/></div>
+          <div className="col-md-6 text-center"><Image imgUrl={producto.imgUrl}/></div>
           <div className="col-md-6">
             <p className="h4 mb-3 fw-bold text-decoration-underline">Características del dispositivo</p>
             <h1>{producto.brand}<br/>
