@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import '../App.css';
 import Header from '../components/Header';
 import Item from '../components/Item';
+import { updateCarritoCabecera } from '../App';
 
 class ProductListPage extends React.Component {
   constructor(props) {

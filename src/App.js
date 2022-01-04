@@ -15,3 +15,13 @@ export default function App() {
     </Routes>
   );
 }
+
+export function updateCarritoCabecera() {
+  let itemsCarritoHtml = document.body.querySelector('#items-carrito');
+  var localCartItems = localStorage.getItem('carritoItems');
+  if(localCartItems && localCartItems != '') {
+    itemsCarritoHtml.innerHTML = localCartItems;
+  } else {
+    itemsCarritoHtml.innerHTML = '0';
+  }
+}

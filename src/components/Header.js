@@ -1,16 +1,26 @@
 import React from 'react';
 import Search from './Search';
 import { Link } from 'react-router-dom';
+import { updateCarritoCabecera } from '../App';
 
 class Header extends React.Component {
   render() {
+    var localCartItems = localStorage.getItem('carritoItems');
+    var itemsCarritoHtml = '0';
+    if(localCartItems && localCartItems != '') {
+      itemsCarritoHtml = localCartItems;
+    } else {
+      itemsCarritoHtml = '0';
+    }
+
     let productName = this.props.productName;
     if(productName) {
       return (
         <header className="App-header">
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark w-100">
             <div className="container-fluid d-flex justify-content-between">
-              <a className="navbar-brand" href="#">PCSIMPONENTES</a>
+              <Link to="/" className="navbar-brand">PCSIMPONENTES</Link>
+              <div className="text-white">Items carrito: <span id="items-carrito">{itemsCarritoHtml}</span></div>
             </div>
           </nav>
           <nav aria-label="breadcrumb" id="breadcrumb" className="px-3 w-100">
@@ -25,9 +35,10 @@ class Header extends React.Component {
       return (
         <header className="App-header">
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark w-100">
-            <div className="container-fluid d-flex justify-content-between">
-              <a className="navbar-brand" href="#">PCSIMPONENTES</a>
+            <div className="container-fluid d-flex justify-content-end">
+              <Link to="/" className="navbar-brand me-auto">PCSIMPONENTES</Link>
               <Search />
+              <div className="text-white">Items carrito: <span id="items-carrito">{itemsCarritoHtml}</span></div>
             </div>
           </nav>
           <nav aria-label="breadcrumb" id="breadcrumb" className="px-3 w-100">
@@ -42,7 +53,6 @@ class Header extends React.Component {
 }
 
 export default Header;
-
 
 document.body.addEventListener('keyup', function(event) {
   var productos = document.body.querySelectorAll('.itemProducto');
